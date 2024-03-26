@@ -1,0 +1,302 @@
+/* CSS HEX
+--persian-indigo: #360568ff;
+--blue-munsell: #0091adff;
+--lilac: #c49bbbff;
+--champagne: #f5e2c8ff;
+--nyanza: #d4f4ddff;
+
+/* CSS HSL */
+/* --persian-indigo: hsla(270, 91%, 21%, 1);
+--blue-munsell: hsla(190, 100%, 34%, 1);
+--lilac: hsla(313, 26%, 69%, 1);
+--champagne: hsla(35, 69%, 87%, 1);
+--nyanza: hsla(137, 59%, 89%, 1); */
+
+/* SCSS HEX */
+/* $persian-indigo: #360568ff;
+$blue-munsell: #0091adff;
+$lilac: #c49bbbff;
+$champagne: #f5e2c8ff;
+$nyanza: #d4f4ddff; */
+
+/* SCSS HSL */
+/* $persian-indigo: hsla(270, 91%, 21%, 1);
+$blue-munsell: hsla(190, 100%, 34%, 1);
+$lilac: hsla(313, 26%, 69%, 1);
+$champagne: hsla(35, 69%, 87%, 1);
+$nyanza: hsla(137, 59%, 89%, 1); */
+
+/* SCSS RGB */
+/* $persian-indigo: rgba(54, 5, 104, 1);
+$blue-munsell: rgba(0, 145, 173, 1);
+$lilac: rgba(196, 155, 187, 1);
+$champagne: rgba(245, 226, 200, 1);
+$nyanza: rgba(212, 244, 221, 1); */ 
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+header.container-fluid{
+  --bs-gutter-x: 0 !important;
+}
+.container-fluid{
+  --bs-gutter-x: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Goudy Old Style', 'Lucida Bright', 'Courier New', Courier, monospace;
+}
+
+p, li {
+font-family: 'Lucida Bright'; 
+font-size: small;
+}
+
+
+/*Nav*/
+#navbar {
+    background-color: #333; /* Black background color */
+    position: fixed; /* Make it stick/fixed */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  }
+  
+  /* Style the navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  #navbar a:hover {
+    background-color: rgba(196, 155, 187, .12);
+    color: rgb(255, 255, 255);
+  }
+
+/*Socials on Contact Page*/
+.social-media-card {
+  background-color: #fff; /* Card background color */
+  border-radius: 8px; /* Card border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Card shadow */
+  padding: 20px; /* Padding inside the card */
+  transition: transform 0.3s ease; /* Transition for hover effect */
+  
+}
+
+.social-media-card:hover {
+  transform: scale(1.02); /* Zoom effect on hover */
+}
+
+.social-media-card ul {
+  list-style: none; /* Remove default list styles */
+  padding: 3rem; /* Remove default padding */
+}
+
+.social-media-card ul li {
+  margin-bottom: 10rem; /* Spacing between social media links */
+}
+
+.social-media-card ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #320067; /* Link color */
+}
+
+.social-media-card ul li a:hover {
+  color: #a303ff; /* Link color on hover */
+}
+
+
+/*Nav animation*/
+.menu-toggle {
+  display: none;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-items.show {
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand h3 {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #360568ff;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+}
+
+/*Button*/
+/*button animation*/
+.portfolio-button {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.portfolio-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.portfolio-button:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.portfolio-button:hover {
+  color: #007bff;
+}
+
+.portfolio-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/*Nav*/
+/*Make nav move with page content*/
+#fixednav {
+  position: fixed; /* Make it stick/fixed */
+  width: 100%; /* Full width */
+  transition: top 0.3s;
+  z-index: 2; /* Transition effect when sliding down (and up) */
+}
+
+#guyanddog {
+  padding-left: 0 !important;
+padding-right:0 !important;
+  margin-left: 0 !important;
+margin-right:0 !important;
+}
+
+#animals {
+  z-index: -1;
+}
+
+/* Custom CSS for Carousel */
+
+/* Customizing carousel indicators */
+.carousel-indicators {
+  bottom: 10px;
+}
+
+.carousel-indicators li {
+  background-color: #fff; /* Indicator color */
+  border: 1px solid #333; /* Border color */
+}
+
+/* Active indicator */
+.carousel-indicators .active {
+  background-color: #333; /* Active indicator color */
+}
+
+/* Customizing carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* Adjusting icon size */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 30px;
+  width: 30px;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-color: rgba(1, 88, 118, 0.65); /* Control button background color */
+}
+
+/* Control button position */
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+/* Adjusting control button position on small devices */
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+}
+
+/* Customizing carousel item */
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Image shadow */
+}
+
+/* Transition effect for carousel items */
+.carousel-inner .carousel-item {
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* Customizing carousel fade effect */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+/* End Custom CSS for Carousel */
